@@ -1,21 +1,18 @@
-
-
 @import url('additional.css');
-/* Variables CSS - Paleta de colores y tipografías */
+
 :root {
-  /* Colores primarios */
+ 
   --primary-50: #f0f9ff;
   --primary-100: #e0f2fe;
   --primary-200: #bae6fd;
-  --primary-300: #7dd3fc;
-  --primary-400: #f54242;
-  --primary-500: #dd1e2e; /* Color principal */
-  --primary-600: #ec3443;
-  --primary-700: #e7dddd;
-  --primary-800: #850707;
+  --primary-300: #5012b3;
+  --primary-400: #f53333;
+  --primary-500: #dd1e2e; 
+  --primary-700: #d48585;
+  --primary-800: #ca2929;
   --primary-900: #6e0c0c;
 
-  /* Colores neutros */
+  
   --gray-50: #f9fafb;
   --gray-100: #f3f4f6;
   --gray-200: #e5e7eb;
@@ -27,17 +24,17 @@
   --gray-800: #0c0c0c;
   --gray-900: #020202;
 
-  /* Colores de estado */
+  
   --success: #10b981;
   --error: #e71d1d;
   --warning: #f59e0b;
 
-  /* Tipografías */
+  
   --font-main: 'Inter', system-ui, -apple-system, sans-serif;
   --font-heading: 'Montserrat', sans-serif;
   --font-mono: 'Roboto Mono', monospace;
 
-  /* Espaciados y bordes */
+  
   --radius-sm: 0.25rem;
   --radius-md: 0.5rem;
   --radius-lg: 0.75rem;
@@ -48,10 +45,10 @@
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
-/* Importar fuentes de Google */
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&family=Roboto+Mono:wght@400;500&display=swap');
 
-/* Reset y estilos base */
+
 *,
 *::before,
 *::after {
@@ -105,7 +102,7 @@ img {
   display: block;
 }
 
-/* Componentes reutilizables */
+
 .container {
   width: 100%;
   max-width: 1200px;
@@ -163,7 +160,7 @@ img {
   box-shadow: var(--shadow-lg);
 }
 
-/* Estructura del layout */
+
 .main-header {
   background-color: white;
   box-shadow: var(--shadow-sm);
@@ -227,7 +224,7 @@ img {
   cursor: pointer;
 }
 
-/* Hero section */
+
 .hero {
   background: linear-gradient(135deg, var(--primary-500), var(--primary-700));
   color: white;
@@ -275,7 +272,7 @@ img {
   justify-content: center;
 }
 
-/* Features section */
+
 .features {
   padding: 4rem 0;
 }
@@ -317,7 +314,7 @@ img {
   font-size: 1.5rem;
 }
 
-/* Footer */
+
 .main-footer {
   background-color: var(--gray-300);
   color: rgb(14, 9, 88);
@@ -333,7 +330,7 @@ img {
 
 .footer-logo {
   font-family: var(--font-heading);
-  font-size: 1.75rem;
+  font-size: 2.75rem;
   margin-bottom: 1rem;
   display: block;
 }
@@ -468,7 +465,7 @@ img {
     font-size: 1rem;
   }
 }
-/* Estilos para la página Acerca de */
+
 .about-section {
   max-width: 800px;
   margin: 0 auto;
@@ -482,7 +479,7 @@ img {
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-/* Estilos para la página Servicios */
+
 .services-section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -508,7 +505,7 @@ img {
   margin-top: 0.5rem;
 }
 
-/* Estilos para la página Contacto */
+
 .contact-section {
   max-width: 1000px;
   margin: 0 auto;
@@ -568,9 +565,32 @@ button.btn:hover {
   background: #c3e647b0;
 }
 
-/* Responsive para página de contacto */
+
 @media (max-width: 768px) {
   .contact-section {
       grid-template-columns: 1fr;
   }
+}
+body {
+  max-width: 0 auto;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  line-height: 2.6;
+}
+h1, h2 {
+  color: #2c3e50;
+}
+a {
+  color: #3498db;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+h2 {
+  margin-top: 30px;
+}
+p {
+  margin-bottom: 20px;
 }
