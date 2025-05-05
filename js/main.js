@@ -1,4 +1,4 @@
-// Menú móvil
+
 document.addEventListener('DOMContentLoaded', function() {
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const mainNav = document.querySelector('.main-nav');
@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     }
   
-    // Cerrar menú al hacer clic en un enlace
+    
     const navLinks = document.querySelectorAll('.main-nav a');
     navLinks.forEach(link => {
       link.addEventListener('click', function() {
@@ -21,28 +21,28 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
   
-    // Validación de formulario de contacto
+    
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
       contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
         
-        // Resetear mensajes de error
+        
         resetErrors();
         
-        // Validar campos
+        
         let isValid = true;
         const name = document.getElementById('name');
         const email = document.getElementById('email');
         const message = document.getElementById('message');
         
-        // Validar nombre
+        
         if (name.value.trim() === '') {
           showError(name, 'Por favor ingresa tu nombre');
           isValid = false;
         }
         
-        // Validar email
+        
         if (email.value.trim() === '') {
           showError(email, 'Por favor ingresa tu email');
           isValid = false;
@@ -51,22 +51,22 @@ document.addEventListener('DOMContentLoaded', function() {
           isValid = false;
         }
         
-        // Validar mensaje
+        
         if (message.value.trim() === '') {
           showError(message, 'Por favor ingresa tu mensaje');
           isValid = false;
         }
         
-        // Si el formulario es válido, enviar
+        
         if (isValid) {
-          // Simular envío
+          
           showSuccess('¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.');
           contactForm.reset();
         }
       });
     }
   
-    // Slider de testimonios
+    
     const testimonialsSlider = document.querySelector('.testimonials-slider');
     if (testimonialsSlider) {
       let currentSlide = 0;
@@ -84,10 +84,10 @@ document.addEventListener('DOMContentLoaded', function() {
         showSlide(currentSlide);
       }
       
-      // Configurar intervalo para cambio automático
+      
       let slideInterval = setInterval(nextSlide, 5000);
       
-      // Pausar al hacer hover
+      
       testimonialsSlider.addEventListener('mouseenter', () => {
         clearInterval(slideInterval);
       });
@@ -96,11 +96,11 @@ document.addEventListener('DOMContentLoaded', function() {
         slideInterval = setInterval(nextSlide, 5000);
       });
       
-      // Mostrar primer slide
+      
       showSlide(0);
     }
   
-    // Animaciones al hacer scroll
+    
     const animateOnScroll = () => {
       const elements = document.querySelectorAll('.animate-on-scroll');
       
@@ -115,9 +115,9 @@ document.addEventListener('DOMContentLoaded', function() {
     };
     
     window.addEventListener('scroll', animateOnScroll);
-    animateOnScroll(); // Ejecutar al cargar la página
-  
-    // Funciones auxiliares
+    animateOnScroll(); 
+
+   
     function validateEmail(email) {
       const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       return re.test(email);
@@ -167,7 +167,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
   
-  // Efecto smooth scroll para enlaces internos
+  
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       e.preventDefault();
@@ -188,7 +188,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
   
-  // Lazy loading para imágenes
+  
   if ('IntersectionObserver' in window) {
     const lazyImages = document.querySelectorAll('img.lazy');
     
@@ -209,4 +209,22 @@ document.addEventListener('DOMContentLoaded', function() {
     lazyImages.forEach(img => {
       imageObserver.observe(img);
     });
+   // Lazy Loading optimizado para Terser
+   document.addEventListener("DOMContentLoaded", () => {
+    const lazyImages = document.querySelectorAll('img.lazy');
+    
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const img = entry.target;
+            img.src = img.dataset.src;
+            observer.unobserve(img);
+          }
+        });
+      });
+      
+      lazyImages.forEach(img => observer.observe(img));
+    }
+  });
   }
